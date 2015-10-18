@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     var firstPostLiked: UIButton?
     
     @IBAction func firstPostLiked(sender: UIButton) {
-        firstPostLiked = sender
+        firstPostLiked = sender as! UIButton
         if sender.titleLabel!.textColor == UIColor.lightGrayColor() {
             sender.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         }
@@ -26,10 +26,12 @@ class FirstViewController: UIViewController {
             sender.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         }
     }
+
     //up & downvote
     var firstPostUpvoted: UIButton?
+
     @IBAction func firstPostUpvoted(sender: UIButton) {
-        firstPostUpvoted = sender
+        firstPostUpvoted = sender as! UIButton
         print(sender)
         if sender.titleLabel!.textColor == UIColor.lightGrayColor() {
             sender.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
@@ -40,9 +42,8 @@ class FirstViewController: UIViewController {
         else{
             sender.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         }
-
     }
-    
+
     var firstPostDownvoted: UIButton?
     @IBAction func firstPostDownvoted(sender: UIButton) {
         firstPostDownvoted = sender
@@ -73,6 +74,7 @@ class FirstViewController: UIViewController {
     var nextI = 0
     var timerCount = 0
     var timer = NSTimer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerCount = 0
@@ -92,6 +94,7 @@ class FirstViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+        
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

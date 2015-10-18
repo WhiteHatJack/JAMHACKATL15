@@ -50,7 +50,7 @@
         <!--Home-->
         <scene sceneID="iTG-1g-jq8">
             <objects>
-                <viewController id="eQy-gA-pfa" sceneMemberID="viewController">
+                <viewController id="eQy-gA-pfa" customClass="homeViewController" customModule="HackATL15Tabbed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dw2-jx-Q4c"/>
                         <viewControllerLayoutGuide type="bottom" id="xFs-Ji-qnG"/>
@@ -70,34 +70,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="firstPostLiked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="QmU-Oe-aJX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-04-5XN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="❤︎">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="343" y="315" width="42" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="firstPostLiked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0un-nQ-lHc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEB-pJ-jZw">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="❤︎">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="343" y="502" width="42" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="firstPostLiked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vwL-Ao-hNP"/>
+                                    <action selector="firstPostLiked:" destination="eQy-gA-pfa" eventType="touchUpInside" id="RuD-a4-s0b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88R-31-Afh">
@@ -112,6 +85,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="firstPostDownvoted:" destination="9pv-A4-QxB" eventType="touchUpInside" id="FTS-AP-9vL"/>
+                                    <action selector="firstPostDownvoted:" destination="eQy-gA-pfa" eventType="touchUpInside" id="Nd1-DH-6A9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atl-er-PmS">
@@ -125,6 +99,7 @@
                                     <rect key="frame" x="16" y="94" width="30" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="firstPostUpvoted:" destination="eQy-gA-pfa" eventType="touchUpInside" id="Kaa-ke-Ne9"/>
                                     <action selector="firstPostUpvoted:" destination="9pv-A4-QxB" eventType="touchUpInside" id="uw6-US-SbK"/>
                                 </connections>
                             </button>
@@ -242,17 +217,6 @@
                                     <rect key="frame" x="158" y="579" width="83" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-l6-SId">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Home"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="13" width="41" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="nrt-8p-jbM"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="corgi-3" translatesAutoresizingMaskIntoConstraints="NO" id="bOt-85-fya">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -260,14 +224,53 @@
                                     <rect key="frame" x="82" y="56" width="247" height="155"/>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nk-H7-UgW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="❤︎">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="343" y="294" width="42" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="firstPostLiked:" destination="eQy-gA-pfa" eventType="touchUpInside" id="7AC-zL-J53"/>
+                                    <action selector="firstPostLiked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ccc-uN-Wyr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvu-bR-S06">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="❤︎">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="343" y="473" width="42" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="firstPostLiked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RHe-5y-6zo"/>
+                                    <action selector="firstPostLiked:" destination="eQy-gA-pfa" eventType="touchUpInside" id="tpS-p8-u3F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-l6-SId">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Home"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="25" y="13" width="41" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="nrt-8p-jbM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Fmk-XP-8aS"/>
-                                <exclude reference="Azb-04-5XN"/>
-                                <exclude reference="nEB-pJ-jZw"/>
                                 <exclude reference="88R-31-Afh"/>
                                 <exclude reference="atl-er-PmS"/>
                                 <exclude reference="Q3H-yp-VmB"/>
@@ -280,15 +283,15 @@
                                 <exclude reference="yFq-rU-oBi"/>
                                 <exclude reference="rqD-ve-l6s"/>
                                 <exclude reference="N0Q-UN-8fy"/>
-                                <exclude reference="ayI-l6-SId"/>
                                 <exclude reference="bOt-85-fya"/>
+                                <exclude reference="0Nk-H7-UgW"/>
+                                <exclude reference="Jvu-bR-S06"/>
+                                <exclude reference="ayI-l6-SId"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Fmk-XP-8aS"/>
-                                <include reference="Azb-04-5XN"/>
-                                <include reference="nEB-pJ-jZw"/>
                                 <include reference="88R-31-Afh"/>
                                 <include reference="atl-er-PmS"/>
                                 <include reference="Q3H-yp-VmB"/>
@@ -301,8 +304,10 @@
                                 <include reference="yFq-rU-oBi"/>
                                 <include reference="rqD-ve-l6s"/>
                                 <include reference="N0Q-UN-8fy"/>
-                                <include reference="ayI-l6-SId"/>
                                 <include reference="bOt-85-fya"/>
+                                <include reference="0Nk-H7-UgW"/>
+                                <include reference="Jvu-bR-S06"/>
+                                <include reference="ayI-l6-SId"/>
                             </mask>
                         </variation>
                     </view>
@@ -533,6 +538,7 @@
                         <viewControllerLayoutGuide type="bottom" id="G40-ZR-rfJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vq5-0C-5f3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack Hester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzV-vi-fDh">
